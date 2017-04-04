@@ -41,7 +41,7 @@
                     return
                 }
                 // 这里后台好使了需要删掉
-                location.href = location.origin + '/#/home'
+                /* location.href = location.origin + '/#/home' */
                 let userLogin = this.$loading()
                 axios({
                     method: 'post',
