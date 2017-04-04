@@ -10,8 +10,8 @@
         </div>
         <div class="login-body">
             <div class="login-inbody">
-                <el-input class="mar-b20" v-model="userName" placeholder="用户名"></el-input>
-                <el-input class="mar-b20" v-model="passWord" placeholder="密码" type="password"></el-input>
+                <input class="mar-b20" v-model="userName" placeholder="用户名">
+                <input class="mar-b20" v-model="passWord" placeholder="密码" type="password">
                 <a class="none-number" href="#/register">没有账号?</a>
                 <button @click="loginTest" class="login-btn" type="button">登录</button>
             </div>
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+    import axios from 'axios'
+    import qs from 'qs'
     export default {
         name: 'login',
         data () {
@@ -38,18 +40,38 @@
                     this.alert('密码不能为空!')
                     return
                 }
-                this.$loading()
-                // ajax
+                // 这里后台好使了需要删掉
+                location.href = location.origin + '/#/home'
+                let userLogin = this.$loading()
+                axios({
+                    method: 'post',
+                    url: '/users/login',
+                    data: qs.stringify({
+                        username: this.userName,
+                        password: this.passWord
+                    })
+                }).then(res => {
+                    userLogin.close()
+                    if (res.data.status === 0) {
+                        location.href = location.origin + '/#/home'
+                    } else {
+                        this.alert('用户名或密码错误.')
+                    }
+                }).catch(() => {
+                    userLogin.close()
+                    this.alert('网络错误,请稍后再试.')
+                })
             },
             /**
              * 错误提示
-             * @param value
+             * @param {string} value 显示的信息
+             * @param {string} type 显示类型
              */
-            alert (value = '信息错误') {
+            alert (value = '信息错误', type = 'error') {
                 this.$message({
                     showClose: true,
                     message: value,
-                    type: 'error'
+                    type: type
                 })
             }
         }
@@ -69,7 +91,7 @@
         height:100%;
     }
     .login{
-        margin-top:140px;
+        padding-top:140px;
     }
     .login-header{
         margin:0 auto 20px auto;
