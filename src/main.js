@@ -7,7 +7,8 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import axios from 'axios'
 
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-from-urlencoded'
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+axios.defaults.baseURL = 'http://localhost:3000/'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
