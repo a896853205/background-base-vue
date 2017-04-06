@@ -1,15 +1,16 @@
 <template>
-    <nav class="nav">
+    <nav id="nav" class="nav">
         <ul>
-            <li v-for="li in navData" v-on:click="showChild(li)" v-bind:style="{'max-height': li.maxHeight}" v-bind:class="li.showChild ? 'active-li': ''">
+            <li v-for="li in navData" @click="showChild(li)" :style="{'max-height': li.maxHeight}" :class="li.showChild ? 'active-li': ''">
                 <a>
-                    <i v-bind:class="li.faClass"></i>
+                    <i :class="li.faClass"></i>
                     {{li.liName}}
-                    <i v-if="li.children.length != 0" v-bind:style="{'transform': li.showChild ? 'rotate(90deg)' : 'rotate(0deg)'}" class="fa fa-angle-right"></i>
+                    <i v-if="li.children.length != 0" :style="{'transform': arrRotate(li)}" class="fa fa-angle-right"></i>
                 </a>
                 <ul class="child-ul">
                     <li class="child-li" v-for="childLi in li.children">
-                        <a v-on:click.stop="" v-bind:href="childLi.liHref">{{childLi.liName}}</a>
+                        <i class="fa fa-circle-thin"></i>
+                        <a @click.stop="" :href="childLi.liHref">{{childLi.liName}}</a>
                     </li>
                 </ul>
             </li>
@@ -27,11 +28,8 @@
                     liHref: '',
                     faClass: 'fa fa-search',
                     children: [{
-                        liName: '车队资料',
-                        liHref: ''
-                    }, {
                         liName: '车辆资料',
-                        liHref: ''
+                        liHref: '#/home/carShow'
                     }, {
                         liName: '员工资料',
                         liHref: ''
@@ -112,9 +110,25 @@
                         activeLi.showChild = !activeLi.showChild
                     }
                 }
+            },
+            /**
+             * 箭头旋转角度
+             * @param {object} activeLi 选中的li标签
+             * @returns {string} 旋转的角度rotate(90deg)|rotate(0deg)
+             */
+            arrRotate (activeLi) {
+                if (activeLi.showChild) {
+                    return 'rotate(90deg)'
+                } else {
+                    return 'rotate(0deg)'
+                }
             }
         }
     }
+    /* {
+     liName: '车队资料',
+     liHref: ''
+     }, */
 </script>
 
 <style>
@@ -156,10 +170,14 @@
     }
     .child-ul li {
         font-size: 14px;
-        border-bottom: 1px dashed rgb(213,218,230);
+        position: relative;
     }
-    .child-ul .child-li a {
-        /*padding-left: 50px;*/
+    .child-ul li .fa-circle-thin {
+        position: absolute;
+        font-size: 16px;
+        line-height: 36px;
+        top: 0;
+        left: -16px;
     }
     .child-ul {
         border-left: 1px dashed rgb(213,218,230);
@@ -170,5 +188,13 @@
     }
     .active-li a,.active-li .fa {
         color: #fff;
+    }
+    .child-li {
+        position: relative;
+        transition: .2s;
+        left: 0;
+    }
+    .child-li:hover {
+        left: 20px;
     }
 </style>

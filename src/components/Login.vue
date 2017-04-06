@@ -41,7 +41,6 @@
                     return
                 }
                 // 这里后台好使了需要删掉
-                /* location.href = location.origin + '/#/home' */
                 let userLogin = this.$loading()
                 axios({
                     method: 'post',
@@ -53,11 +52,17 @@
                 }).then(res => {
                     userLogin.close()
                     if (res.data.status === 0) {
+                        window.Authorization = res.data.token
                         location.href = location.origin + '/#/home'
+                        /* axios.defaults.headers.common = {
+                            'x-token': res.data.token,
+                            'Access-Control-Request-Headers': '0'
+                        } */
                     } else {
                         this.alert('用户名或密码错误.')
                     }
-                }).catch(() => {
+                }).catch(err => {
+                    console.log(err)
                     userLogin.close()
                     this.alert('网络错误,请稍后再试.')
                 })

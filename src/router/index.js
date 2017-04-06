@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Home from '@/components/Home'
+import carShow from '@/components/HomePage/carShow'
 
 Vue.use(Router)
 
@@ -19,13 +20,15 @@ export default new Router({
         }, {
             path: '/home',
             name: 'Home',
-            component: Home
+            component: Home,
+            children: [
+                {
+                    path: '/home/carShow',
+                    component: carShow
+                }
+            ]
         }
     ]
 })
-/* children: [
-    {
-        path: '/home/page2',
-        component: Page2
-    }
+/*
 ] */
