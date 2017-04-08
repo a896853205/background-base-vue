@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="carShow">
         <el-row :gutter="20">
             <el-col :span="6"><div @click="addHandle" class="top-button add-button"><i class="fa fa-plus-square-o"></i> 增加车辆</div></el-col>
             <el-col :span="6"><div @click="updateHandle" class="top-button update-button"><i class="fa fa-pencil"></i> 修改车辆</div></el-col>
@@ -167,6 +167,9 @@
                     this.alert('网络错误,请稍后重试.')
                 })
             },
+            /**
+             * 查询所有车辆
+             **/
             selectHandle () {
                 axios({
                     method: 'post',
@@ -297,6 +300,12 @@
 </script>
 
 <style>
+    #carShow {
+        height: 100%;
+    }
+    .el-table {
+        height: calc(100% - 50px)
+    }
     .top-button {
         height: 40px;
         line-height: 40px;

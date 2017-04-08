@@ -198,7 +198,7 @@
         box-shadow: 0 0 5px #222;
     }
     .body {
-        padding-top: 42px;
+        padding-top: 44px;
         height: 100%;
         box-sizing: border-box;
     }
@@ -215,5 +215,6 @@
     .body-view {
         padding: 10px;
         box-sizing: border-box;
+        overflow: auto;
     }
 </style>

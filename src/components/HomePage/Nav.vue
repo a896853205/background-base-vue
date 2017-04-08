@@ -32,7 +32,10 @@
                         liHref: '#/home/carShow'
                     }, {
                         liName: '员工资料',
-                        liHref: ''
+                        liHref: '#/home/userShow'
+                    }, {
+                        liName: '储位资料',
+                        liHref: '#/home/storageShow'
                     }],
                     showChild: false,
                     maxHeight: '37px'
@@ -42,13 +45,13 @@
                     faClass: 'fa fa-calendar',
                     children: [{
                         liName: '货物入库',
-                        liHref: '#/'
+                        liHref: '#/home/inGoodsShow'
                     }, {
                         liName: '货物出库',
-                        liHref: '#/'
+                        liHref: '#/home/outGoodsShow'
                     }, {
-                        liName: '货物盘点',
-                        liHref: '#/'
+                        liName: '货物流动',
+                        liHref: '#/home/goodsFlowShow'
                     }],
                     showChild: false,
                     maxHeight: '37px'
@@ -58,9 +61,9 @@
                     faClass: 'fa fa-calendar-plus-o',
                     children: [{
                         liName: '维修登记',
-                        liHref: '#/'
+                        liHref: '#/home/carRepairShow'
                     }, {
-                        liName: '保养登记',
+                        liName: '加油登记',
                         liHref: '#/'
                     }],
                     showChild: false,
@@ -71,9 +74,6 @@
                     faClass: 'fa fa-braille',
                     children: [{
                         liName: '支出与收入',
-                        liHref: '#/'
-                    }, {
-                        liName: '银行存取款',
                         liHref: '#/'
                     }, {
                         liName: '生成报表',
