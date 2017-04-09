@@ -11,7 +11,6 @@
             <el-table-column prop="money" label="单价" fixed="right" width="300"></el-table-column>
             <el-table-column prop="year" label="年" width="300"></el-table-column>
             <el-table-column prop="month" label="月" width="300"></el-table-column>
-            <el-table-column prop="day" label="日" width="300"></el-table-column>
         </el-table>
         <el-dialog title="自己的工资" v-model="dialogTableVisible">
             <el-table :data="gridData">
@@ -21,7 +20,7 @@
                 <el-table-column prop="month" label="月"></el-table-column>
                 <el-table-column prop="username" label="用户名" width="300"></el-table-column>
                 <el-table-column prop="employee_name" label="司机名"></el-table-column>
-                <el-table-column prop="money" label="单价" fixed="right"></el-table-column>
+                <el-table-column prop="money" label="总销售额" fixed="right" width="300"></el-table-column>
             </el-table>
         </el-dialog>
         <el-dialog title="自己的工资流动" v-model="sumVisible">
