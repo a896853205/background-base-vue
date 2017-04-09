@@ -21,7 +21,7 @@
         <el-dialog title="增加维修记录" v-model="addVisible">
             <el-form :model="addForm">
                 <el-form-item label="车牌照" :label-width="formLabelWidth">
-                    <el-select v-model="addForm.license_plate" placeholder="请选择员工职位">
+                    <el-select v-model="addForm.license_plate" placeholder="请选择车牌照">
                         <el-option v-for="option in license_plate" :label="option" :value="option"></el-option>
                     </el-select>
                 </el-form-item>

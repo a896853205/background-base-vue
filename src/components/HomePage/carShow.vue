@@ -246,6 +246,7 @@
                         })
                     }).then(res => {
                         if (res.data.status === '0') {
+                            this.alert('删除成功.', 'success')
                             this.selectHandle()
                         }
                     }).catch(() => {
@@ -277,7 +278,6 @@
                 let dialogLoading = this.$loading({
                     target: document.querySelector('.el-dialog')
                 })
-                // 所有职位请求
                 axios({
                     method: 'post',
                     url: '/employee/selectEmployee_nameByPosition',

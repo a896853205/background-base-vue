@@ -19,7 +19,7 @@
                 <el-table-column prop="salary" label="薪资" fixed width="150"></el-table-column>
                 <el-table-column prop="year" label="年"></el-table-column>
                 <el-table-column prop="month" label="月"></el-table-column>
-                <el-table-column prop="username" label="用户名"></el-table-column>
+                <el-table-column prop="username" label="用户名" width="300"></el-table-column>
                 <el-table-column prop="employee_name" label="司机名"></el-table-column>
                 <el-table-column prop="money" label="单价" fixed="right"></el-table-column>
             </el-table>

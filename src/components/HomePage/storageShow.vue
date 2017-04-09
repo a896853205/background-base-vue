@@ -8,9 +8,8 @@
         </el-row>
         <el-table :data="tableData" stripe style="width: 100%" height="100%" highlight-current-row @current-change="handleCurrentChange">
             <el-table-column prop="loc_id" label="储位id"></el-table-column>
-            <el-table-column prop="size" label="车队资料"></el-table-column>
-            <el-table-column prop="goods_id" label="货物数量"></el-table-column>
-            <el-table-column prop="surplus_size" label="货物名称"></el-table-column>
+            <el-table-column prop="size" label="储位大小"></el-table-column>
+            <el-table-column prop="goods_id" label="货物id"></el-table-column>
         </el-table>
         <el-dialog title="增加储位" v-model="addStorVisible">
             <el-form :model="addForm">

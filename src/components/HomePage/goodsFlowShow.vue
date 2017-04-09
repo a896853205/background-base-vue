@@ -16,25 +16,25 @@
             <el-table-column prop="count" label="数量" width="300"></el-table-column>
             <el-table-column prop="money" label="单价" fixed="right" width="300"></el-table-column>
         </el-table>
-        <el-dialog title="增加车辆" v-model="addVisible">
+        <el-dialog title="增加货物流动" v-model="addVisible">
             <el-form :model="addForm">
                 <el-form-item label="货物id" :label-width="formLabelWidth">
-                    <el-select v-model="addForm.goods_id" placeholder="请选择员工姓名">
+                    <el-select v-model="addForm.goods_id" placeholder="请选择货物id">
                         <el-option v-for="option in goods_id" :label="option" :value="option"></el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="储位id" :label-width="formLabelWidth">
-                    <el-select v-model="addForm.loc_id" placeholder="请选择员工姓名">
+                    <el-select v-model="addForm.loc_id" placeholder="请选择储位id">
                         <el-option v-for="option in loc_id" :label="option" :value="option"></el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="车辆id" :label-width="formLabelWidth">
-                    <el-select v-model="addForm.car_id" placeholder="请选择员工姓名">
+                    <el-select v-model="addForm.car_id" placeholder="请选择车辆id">
                         <el-option v-for="option in car_id" :label="option" :value="option"></el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="类型" :label-width="formLabelWidth">
-                    <el-select v-model="addForm.type" placeholder="请选择员工姓名">
+                    <el-select v-model="addForm.type" placeholder="请选择类型">
                         <el-option v-for="option in type" :label="option" :value="option"></el-option>
                     </el-select>
                 </el-form-item>
