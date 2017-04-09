@@ -64,7 +64,7 @@
                         liHref: '#/home/carRepairShow'
                     }, {
                         liName: '加油登记',
-                        liHref: '#/'
+                        liHref: '#/home/carOilShow'
                     }],
                     showChild: false,
                     maxHeight: '37px'
@@ -74,13 +74,10 @@
                     faClass: 'fa fa-braille',
                     children: [{
                         liName: '支出与收入',
-                        liHref: '#/'
-                    }, {
-                        liName: '生成报表',
-                        liHref: '#/'
+                        liHref: '#/home/inAndOut'
                     }, {
                         liName: '工资管理',
-                        liHref: '#/'
+                        liHref: '#/home/selectSumMoney'
                     }],
                     showChild: false,
                     maxHeight: '37px'
@@ -188,6 +185,10 @@
     }
     .active-li a,.active-li .fa {
         color: #fff;
+    }
+    .active-li a {
+        position:relative;
+        z-index:20;
     }
     .child-li {
         position: relative;
