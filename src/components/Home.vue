@@ -126,7 +126,7 @@
                 })
                 axios({
                     method: 'post',
-                    url: '/employee/updateStaffposition',
+                    url: '/employee/updateMyselfInfo',
                     data: qs.stringify({
                         'token': window.Authorization,
                         employee_name: self.userinfo.employee_name,
