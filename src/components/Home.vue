@@ -12,7 +12,6 @@
                         <el-dropdown-item>
                             <div @click="showInfo">用户信息修改</div>
                         </el-dropdown-item>
-                        <el-dropdown-item>密码修改</el-dropdown-item>
                         <el-dropdown-item divided>
                             <div @click="logOut">
                                 注销
